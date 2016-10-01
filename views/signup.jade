@@ -1,0 +1,93 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Sign up - Formplexy
+    //
+      Latest compiled and minified JavaScript and CSS
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    // Javascript
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')
+    script(src='javascripts/formplexy-validation.js')
+    // CSS
+    link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='stylesheets/formplexy-bootstrap-dark.css')
+    link(rel='stylesheet', href='stylesheets/iconfont.css')
+  body
+    .container.formplexy
+      // Form Base
+      .row
+        .form-base.col-lg-4.col-lg-push-4.col-md-6.col-md-push-3.col-sm-8.col-sm-push-2.col-xs-12
+          header
+            h1 Sign up
+          // Form
+          section
+            form#signup-form(action='/success', method='post')
+              // Socials - delete this section if you don't want social connects
+              button.btn.social.social-facebook
+                span.social-icon.icon-social-facebook(aria-hidden='true')
+                | with Facebook
+              button.btn.social.social-twitter.pull-right
+                span.social-icon.icon-social-twitter(aria-hidden='true')
+                | with Twitter
+              .clearfix
+              // /.Socials
+              .input-group.signup-name
+                .input-group-addon Name
+                input#signup-name(type='text', placeholder='Name', name='signup-name')
+                span#status-name.status-icon(aria-hidden='true')
+              .input-group.signup-email
+                .input-group-addon Email
+                input#signup-email(type='text', placeholder='Email', name='signup-email')
+                span#status-email.status-icon(aria-hidden='true')
+              .input-group.signup-password
+                .input-group-addon Password
+                input#signup-password(type='password', placeholder='Password', name='signup-password')
+                span#status-password.status-icon(aria-hidden='true')
+              .input-group.signup-repassword
+                .input-group-addon Repassword
+                input#signup-repassword(type='password', placeholder='Retype Password', name='signup-repassword')
+                span#status-repassword.status-icon(aria-hidden='true')
+              // Checkbox area
+              .input-group
+                .checkbox-custom
+                  input#signup-agree.toggle.toggle-round(type='checkbox', name='signup-agree')
+                  label(for='signup-agree')
+                label(for='signup-agree')
+                  | Agree with
+                  a.custom-color(href='', data-toggle='modal', data-target='#terms_and_conditions_modal') terms & conditions
+                span#status-agree.status-icon(aria-hidden='true')
+              .clearfix
+              .row.section-action
+                // Submit
+                .col-xs-4.pull-right
+                  button.btn.primary.pull-right.custom-color-back Sign up
+      // Sign Up / Login Switch
+      .row
+        .account-switch.col-lg-4.col-lg-push-4.col-md-6.col-md-push-3.col-sm-8.col-sm-push-2.col-xs-12.text-center
+          p
+            | Already member?
+            a.custom-color(href='/login') Login
+      // Modal
+      #terms_and_conditions_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='terms_and_conditions_modal_label', aria-hidden='true')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal')
+                span(aria-hidden='true') ×
+                span.sr-only Close
+              h4#terms_and_conditions_modal_label.modal-title Terms and conditions
+            .modal-body
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ante ipsum, pellentesque vel velit non, iaculis condimentum orci. Nullam turpis dolor, aliquet elementum mi eget, sagittis pharetra elit. Aenean blandit erat lacus, nec semper ipsum tempus a. Etiam non enim in turpis mollis aliquet. Suspendisse sagittis metus ac nibh venenatis elementum. Curabitur pretium nibh enim, sed fermentum ipsum porta sit amet. Maecenas laoreet finibus est aliquam laoreet. Etiam eros diam, condimentum a placerat ultrices, vestibulum at est. Duis at fringilla ante. Nullam ut est ac risus iaculis porttitor.
+                br
+                br
+                |                 Nulla feugiat lorem non nunc fringilla, a interdum dolor egestas. Integer quis semper diam. Mauris quam odio, cursus vel lectus at, mattis sodales neque. Aliquam et arcu mauris. Aliquam dapibus, nulla et consequat dignissim, augue enim efficitur erat, consectetur efficitur ipsum dui sed augue. Sed quis risus massa. Nullam non ex bibendum, tincidunt ipsum id, hendrerit lacus.
+                br
+                br
+                |                 Sed id lectus sed mauris dictum auctor feugiat et justo. Cras in neque non sapien cursus lobortis sit amet viverra velit. Nam accumsan, libero at congue consectetur, dolor tortor mattis felis, sed mollis nunc nibh sit amet enim. Aliquam commodo feugiat facilisis. Mauris ullamcorper blandit congue. Nulla in dolor eros. Cras non est aliquet, faucibus diam facilisis, aliquam purus. Quisque varius aliquam odio, vel consectetur orci iaculis eu. Nunc eu gravida diam. Donec semper mauris felis. Donec sit amet tristique enim, sit amet placerat ipsum. Donec facilisis volutpat magna non dictum.

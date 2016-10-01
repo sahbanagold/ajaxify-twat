@@ -1,0 +1,83 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Login
+    //
+      Latest compiled and minified JavaScript and CSS
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    // Javascript
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')
+    script(src='javascripts/formplexy-validation.js')
+    // CSS
+    link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='stylesheets/formplexy-bootstrap-light.css')
+    link(rel='stylesheet', href='stylesheets/iconfont.css')
+  body
+    .container.formplexy
+    
+      // Form Base
+      .row
+        .form-base.col-lg-4.col-lg-push-4.col-md-6.col-md-push-3.col-sm-8.col-sm-push-2.col-xs-12
+          header
+            h1 Login
+          // Form
+          section
+            form#login-form(action='/success', method='post')
+              // Socials - delete this section if you don't want social connects
+              button.btn.social.social-facebook
+                span.social-icon.icon-social-facebook(aria-hidden='true')
+                | with Facebook
+              button.btn.social.social-twitter.pull-right
+                span.social-icon.icon-social-twitter(aria-hidden='true')
+                | with Twitter
+              .clearfix
+              // /.Socials
+              .input-group.login-username
+                .input-group-addon Username
+                input#login-username(type='text', placeholder='User name', name='login-username')
+                span#status-username.status-icon(aria-hidden='true')
+              .input-group.login-password
+                .input-group-addon Password
+                input#login-password(type='password', placeholder='Password', name='login-password')
+                span#status-password.status-icon(aria-hidden='true')
+              // Checkbox area - Keep me logged in
+              //
+                <div class="input-wrapper">
+                <div class="checkbox-custom">
+                <input type="checkbox" name="login-keep" id="login-keep" class="toggle toggle-round">
+                <label for="login-keep"></label>
+                </div>
+                <label for="login-keep">Keep me logged in</label>
+                </div>
+                <div class="clearfix"></div>
+              .row.section-action
+                // Forgotten Password Trigger
+                .col-xs-8
+                  a.forgotten-password-trigger.custom-color Forgotten password?
+                // Submit
+                .col-xs-4
+                  button.btn.primary.pull-right.custom-color-back Login
+          // Forgotten Password
+          section.forgotten-password
+            form#forgotten-password-form(action='donothing', method='post')
+              .input-group.col-sm-7.col-xs-12.login-forgotten-password
+                input#login-forgotten-password(type='text', placeholder='Email', name='login-forgotten-password')
+                span#status-forgotten-password.status-icon(aria-hidden='true')
+              // Submit
+              button.btn.primary.col-sm-4.col-sm-push-1.col-xs-12.custom-color-back Send
+            // Forgotten Password Text
+            p We'll send you e-mail with password reset.
+            .clearfix
+
+      // Sign Up / Login Switch
+      .row
+        .account-switch.col-lg-4.col-lg-push-4.col-md-6.col-md-push-3.col-sm-8.col-sm-push-2.col-xs-12.text-center
+          p
+            | Don't have an account?
+            a.custom-color(href='/signup') Sign up

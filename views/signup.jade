@@ -14,10 +14,12 @@ html(lang='en')
     script(src='javascripts/jquery.min.js')
     script(src='javascripts/bootstrap.min.js')
     script(src='javascripts/formplexy-validation.js')
+    script(src='javascripts/sweetalert2.min.js')
     // CSS
     link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='stylesheets/formplexy-bootstrap-dark.css')
     link(rel='stylesheet', href='stylesheets/iconfont.css')
+    link(rel='stylesheet', href='stylesheets/sweetalert2.min.css')
   body
     .container.formplexy
       // Form Base
@@ -27,7 +29,7 @@ html(lang='en')
             h1 Sign up
           // Form
           section
-            form#signup-form(action='/success', method='post')
+            form#signup-form(action='/signup', method='post')
               // Socials - delete this section if you don't want social connects
               button.btn.social.social-facebook
                 span.social-icon.icon-social-facebook(aria-hidden='true')
@@ -37,17 +39,18 @@ html(lang='en')
                 | with Twitter
               .clearfix
               // /.Socials
+              input#token(type='hidden', value=`${token}`)
               .input-group.signup-name
                 .input-group-addon Name
-                input#signup-name(type='text', placeholder='Name', name='signup-name')
+                input#signup-name(type='text', placeholder='Name', name='username')
                 span#status-name.status-icon(aria-hidden='true')
               .input-group.signup-email
                 .input-group-addon Email
-                input#signup-email(type='text', placeholder='Email', name='signup-email')
+                input#signup-email(type='text', placeholder='Email', name='email')
                 span#status-email.status-icon(aria-hidden='true')
               .input-group.signup-password
                 .input-group-addon Password
-                input#signup-password(type='password', placeholder='Password', name='signup-password')
+                input#signup-password(type='password', placeholder='Password', name='password' value="pasaman301")
                 span#status-password.status-icon(aria-hidden='true')
               .input-group.signup-repassword
                 .input-group-addon Repassword
@@ -66,7 +69,7 @@ html(lang='en')
               .row.section-action
                 // Submit
                 .col-xs-4.pull-right
-                  button.btn.primary.pull-right.custom-color-back Sign up
+                  button.btn.primary.pull-right.custom-color-back(onclick="encodepass()") Sign up
       // Sign Up / Login Switch
       .row
         .account-switch.col-lg-4.col-lg-push-4.col-md-6.col-md-push-3.col-sm-8.col-sm-push-2.col-xs-12.text-center
@@ -91,3 +94,4 @@ html(lang='en')
                 br
                 br
                 |                 Sed id lectus sed mauris dictum auctor feugiat et justo. Cras in neque non sapien cursus lobortis sit amet viverra velit. Nam accumsan, libero at congue consectetur, dolor tortor mattis felis, sed mollis nunc nibh sit amet enim. Aliquam commodo feugiat facilisis. Mauris ullamcorper blandit congue. Nulla in dolor eros. Cras non est aliquet, faucibus diam facilisis, aliquam purus. Quisque varius aliquam odio, vel consectetur orci iaculis eu. Nunc eu gravida diam. Donec semper mauris felis. Donec sit amet tristique enim, sit amet placerat ipsum. Donec facilisis volutpat magna non dictum.
+    script(src='javascripts/btoa.js')

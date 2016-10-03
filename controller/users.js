@@ -44,13 +44,15 @@ class Users_Controller{
       return JSON.stringify(query_result)
     })
   }
-  static add_user(add){
+  static add_user(add,callback){
     model.users.create({
       name: add.name,
       phone: add.phone,
       address: add.address,
       email: add.email,
       password: add.password
+    }).then(function(result){
+      callback(result)
     })
   }
   static update_user(add){

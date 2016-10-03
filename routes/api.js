@@ -35,14 +35,14 @@ router.post('/items', function(req, res, next) {
 
 });
 router.post('/users', function(req, res, next) {
-  var object_item = {
+  var object_user = {
     name: req.body.name,
     phone: req.body.phone,
     address: req.body.address,
     email: req.body.email,
     password: req.body.password,
   }
-      items_controller.add_item(object_item,function (result) {
+      users_controller.add_user(object_user,function (result) {
         res.json(result)
     })
 

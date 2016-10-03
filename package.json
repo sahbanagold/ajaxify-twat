@@ -13,6 +13,9 @@
     "jade": "~1.11.0",
     "json-web-token": "^2.0.3",
     "morgan": "~1.7.0",
+    "pg": "^6.1.0",
+    "postgresql": "0.0.1",
+    "sequelize": "^3.24.3",
     "serve-favicon": "~2.3.0"
   }
 }

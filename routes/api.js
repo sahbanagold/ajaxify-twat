@@ -1,10 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var items_controller = require('../controller/items')
+var users_controller = require('../controller/users')
+var transactions_controller = require('../controller/transactions')
 
 router.get('/items', function(req, res, next) {
 
   items_controller.get_items(function (result) {
+    res.json(result)
+})
+});
+router.get('/users', function(req, res, next) {
+
+  users_controller.get_users(function (result) {
     res.json(result)
 })
 });
@@ -20,6 +28,19 @@ router.post('/items', function(req, res, next) {
     category: req.body.category,
     tag: req.body.tag,
     picture_location: req.body.picture_location,
+  }
+      items_controller.add_item(object_item,function (result) {
+        res.json(result)
+    })
+
+});
+router.post('/users', function(req, res, next) {
+  var object_item = {
+    name: req.body.name,
+    phone: req.body.phone,
+    address: req.body.address,
+    email: req.body.email,
+    password: req.body.password,
   }
       items_controller.add_item(object_item,function (result) {
         res.json(result)

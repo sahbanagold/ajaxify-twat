@@ -1,8 +1,9 @@
 'use strict';
 var model = require('../models')
 class Users_Controller{
-  static get_user(add){
+  static get_users(add){
     model.users.findAll({
+      attributes: ['name','phone','address','email','phone','password'],
       where:{
         id: add.id
       }

@@ -58,7 +58,7 @@ class Transactions_Controller{
       amount: val.dataValues.amount,
       total: val.dataValues.total,
       userId: val.dataValues.userId,
-      itemId: val.dataValues.itemId
+      itemId: val.dataValues.itemId,
       where:{
         id: add.id
       }

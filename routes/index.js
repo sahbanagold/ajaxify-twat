@@ -30,5 +30,8 @@ router.post('/signup', function(req, res, next) {
   console.log(tkn);
   res.render("signup",{token:tkn})
 });
+router.get('/detail1', function(req, res, next) {
+  res.render('detail1', { title: 'Express' });
+});
 
 module.exports = router;

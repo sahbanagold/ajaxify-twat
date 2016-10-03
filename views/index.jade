@@ -1,5 +1,111 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  head
+    title Radius by TEMPLATED
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='assets/css/main.css')
+  body
+    // Header
+    header#header
+      .inner
+        .content
+          h1 Radius
+          h2
+            | A fully responsive masonry-style
+            br
+            | 						portfolio template.
+          a.button.big.alt(href='#')
+            span Let's Go
+        a.button.hidden(href='#')
+          span Let's Go
+    // Main
+    #main
+      .inner
+        .columns
+          // Column 1 (horizontal, vertical, horizontal, vertical)
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic01.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic02.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic03.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic04.jpg', alt='')
+          // Column 2 (vertical, horizontal, vertical, horizontal)
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic06.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic05.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic08.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic07.jpg', alt='')
+          // Column 3 (horizontal, vertical, horizontal, vertical)
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic09.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic12.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic11.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic10.jpg', alt='')
+          // Column 4 (vertical, horizontal, vertical, horizontal)
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic13.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic14.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic15.jpg', alt='')
+          .image.fit
+            a(href='/detail1')
+              img(src='images/pic16.jpg', alt='')
+    // Footer
+    footer#footer
+      a.info.fa.fa-info-circle(href='#')
+        span About
+      .inner
+        .content
+          h3 Vestibulum hendrerit tortor id gravida
+          p
+            | In tempor porttitor nisl non elementum. Nulla ipsum ipsum, feugiat vitae vehicula vitae, imperdiet sed risus. Fusce sed dictum neque, id auctor felis. Praesent luctus sagittis viverra. Nulla erat nibh, fermentum quis enim ac, ultrices euismod augue. Proin ligula nibh, pretium at enim eget, tempor feugiat nulla.
+        .copyright
+          h3 Follow me
+          ul.icons
+            li
+              a.icon.fa-twitter(href='#')
+                span.label Twitter
+            li
+              a.icon.fa-facebook(href='#')
+                span.label Facebook
+            li
+              a.icon.fa-instagram(href='#')
+                span.label Instagram
+            li
+              a.icon.fa-dribbble(href='#')
+                span.label Dribbble
+          | 						© Untitled. Design:
+          a(href='https://templated.co') TEMPLATED
+          | . Images:
+          a(href='https://unsplash.com/') Unsplash
+          | .
+    // Scripts
+    script(src='assets/js/jquery.min.js')
+    script(src='assets/js/skel.min.js')
+    script(src='assets/js/util.js')
+    script(src='assets/js/main.js')

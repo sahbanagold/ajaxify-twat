@@ -1,47 +1,21 @@
 'use strict';
 var model = require('../models')
 class Users_Controller{
-  static get_users(add){
+  static get_users(add,callback){
     model.users.findAll({
-      attributes: ['name','phone','address','email','phone','password'],
+      attributes: ['name','phone','address','email','password'],
       where:{
         id: add.id
       }
     }).then(function(result){
-      var query_result = []
-      result.forEach((val)=>{
-        var user_object = {
-          id: val.dataValues.id,
-          name: val.dataValues.name,
-          phone: val.dataValues.phone,
-          address: val.dataValues.address,
-          email: val.dataValues.email,
-          password: val.dataValues.password
-        }
-        query_result.push(user_object)
-      })
-
-      return JSON.stringify(query_result)
+      callback(result)
     })
   }
-  static get_users(){
+  static get_users(callback){
     model.users.findAll({
 
     }).then(function(result){
-      var query_result = []
-      result.forEach((val)=>{
-        var user_object = {
-          id: val.dataValues.id,
-          name: val.dataValues.name,
-          phone: val.dataValues.phone,
-          address: val.dataValues.address,
-          email: val.dataValues.email,
-          password: val.dataValues.password
-        }
-        query_result.push(user_object)
-      })
-
-      return JSON.stringify(query_result)
+      callback(result)
     })
   }
   static add_user(add,callback){
@@ -55,7 +29,7 @@ class Users_Controller{
       callback(result)
     })
   }
-  static update_user(add){
+  static update_user(add,callback){
     model.users.update({
       name: add.name,
       phone: add.phone,
@@ -65,13 +39,17 @@ class Users_Controller{
       where:{
         id: add.id
       }
+    }).then(function(result){
+      callback(result)
     })
   }
-  static delete_user(add){
+  static delete_user(add,callback){
     model.users.destroy({
       where:{
         id: add.id
       }
+    }).then(function(result){
+      callback(result)
     })
   }
 

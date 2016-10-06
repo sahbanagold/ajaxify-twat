@@ -34,7 +34,7 @@ router.post('/items', function(req, res, next) {
     })
 
 });
-router.post('/users', function(req, res, next) {
+router.post('/users', function(req, res, next) {mn
   var object_user = {
     name: req.body.name,
     phone: req.body.phone,
